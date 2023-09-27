@@ -141,11 +141,13 @@ function movePlayer(r, c) {
 function moveVillan(r, c, v) {
     document.getElementsByClassName(`${villans[v][0]}${villans[v][1]}`)[0].innerHTML = "";
 
-    if (document.getElementsByClassName(`${r}${c}`)[0].innerHTML === '*' || document.getElementsByClassName(`${r}${c}`)[0].innerHTML === 'B' || document.getElementsByClassName(`${r}${c}`)[0].innerHTML === 'K') {
+    if (document.getElementsByClassName(`${r}${c}`)[0].innerHTML === '*' || document.getElementsByClassName(`${r}${c}`)[0].innerHTML === 'B' || document.getElementsByClassName(`${r}${c}`)[0].innerHTML === 'K' || document.getElementsByClassName(`${r}${c}`)[0].innerHTML === 'V') {
         document.getElementsByClassName(`${villans[v][0]}${villans[v][1]}`)[0].innerHTML = 'V';
     }
     else if (document.getElementsByClassName(`${r}${c}`)[0].innerHTML === 'P') {
         player_pos = null;
+        villans[v] = r+c;
+        document.getElementsByClassName(`${villans[v][0]}${villans[v][1]}`)[0].innerHTML = 'V';
         setTimeout(function () {
             alert("You lost");
         }, 400);
