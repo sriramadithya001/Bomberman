@@ -1,0 +1,18 @@
+class Encrypter {
+    String getEncryptedName(String name) {
+	Validator v = new Validator();
+	if(v.validate(name)){
+	     String res = "";
+	     for(int j=name.length()-1;j>=0;j--) res += name.charAt(j);
+	     return res.toLowerCase();
+	}
+	else {
+	    throw new IllegalArgumentException("Try again ");
+	}
+    }
+}
+
+
+class Validator {
+    //method validate
+}	
