@@ -54,7 +54,7 @@ public class Game3 {
                 }
                 else update[k++] = board[r][c];
             }
-            for(int u=0;u<4;u++) board[r][u] = update[u];
+            for(int u=0;u<m;u++) board[r][u] = update[u];
         }
     }
     
@@ -69,7 +69,7 @@ public class Game3 {
                 }
                 else update[k--] = board[r][c];
             }
-            for(int u=0;u<4;u++) board[r][u] = update[u];
+            for(int u=0;u<m;u++) board[r][u] = update[u];
         }
 
     }
@@ -85,7 +85,7 @@ public class Game3 {
                 }
                 else update[k++] = board[r][c];
             }
-            for(int u=0;u<4;u++) board[u][c] = update[u];
+            for(int u=0;u<n;u++) board[u][c] = update[u];
         }
     }
     
@@ -100,7 +100,7 @@ public class Game3 {
                 }
                 else update[k--] = board[r][c];
             }
-            for(int u=0;u<4;u++) board[u][c] = update[u];
+            for(int u=0;u<n;u++) board[u][c] = update[u];
         }
    
     }
