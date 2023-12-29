@@ -181,3 +181,12 @@ public class SnakeLadderGame {
         playGame();
     }
 }
+
+/*
+    board - interface
+    queue - players
+    hashmap - player update
+    arralist<obj> - printing obj(obj.id,obj.head,obj.tail,obj.down,obj.up)    // easy for printing
+    
+*/
+
