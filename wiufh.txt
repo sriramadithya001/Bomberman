@@ -1,0 +1,57 @@
+import java.util.Scanner;
+
+public class Main {
+    
+    public static void fun(int[][] grid,int n) {
+        for(int i=0;i<n;i++) {
+            for(int j=0;j<n;j++) System.out.print(grid[i][j] + " ");
+            System.out.println();
+        }
+        System.out.println();
+    }
+
+    public static int f(int[][] grid,int n) {
+        
+        fun(grid,n);
+    
+        int res = 0;
+    
+        // base case size -> 1
+        if(n == 1) return grid[0][0];        
+        
+        for(int C=0;C<n;C++) {
+            int[][] nwGrid = new int[n-1][n-1];
+            
+            for(int i=0,r=0;i<n;i++) {
+                if(i == 0) continue;
+                for(int j=0,c=0;j<n;j++) {
+                    if(j == C) continue;
+                    nwGrid[r][c++] = grid[i][j];
+                }
+                r++;
+            }
+            int f1 = f(nwGrid,n-1);
+            res += grid[0][C] * f(nwGrid,n-1);
+            
+            System.out.println(grid[0][C] + " " + );
+        }
+        
+        return res;
+        
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();int[][] grid = new int[n][n];
+        for(int i=0;i<n;i++) {
+            for(int j=0;j<n;j++) {
+                int s = 1;
+                if((i+j)%2==1) s = -1;
+                grid[i][j] = sc.nextInt();
+                grid[i][j] *= s;
+            }
+        }
+        int res = f(grid,n);
+        System.out.println(res);
+    }
+}
